@@ -1,0 +1,349 @@
+{
+  "contractName": "Kelsen",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isAProcedure",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isAnOrgan",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "kelsenVersionNumber",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"isAProcedure\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isAnOrgan\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"kelsenVersionNumber\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Standard organ contract\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Kelsen.sol\":\"Kelsen\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Kelsen.sol\":{\"keccak256\":\"0x314aaf6911a13b93dc0984240493e5544955690194a8eb21b467ffb1f896bda9\",\"urls\":[\"bzz-raw://0de21f6ccd72bbee9d2e195854682337848938043c2c9a26b418408f42b79328\",\"dweb:/ipfs/QmXmHEQf31LW5q7RT1AbzJs4fyNkwXYGUo3iaoiHAU52ti\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600260005534801561001557600080fd5b5060fd806100246000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c80635dbe4d28146041578063a8bef97a14605d578063e80b30a514607d575b600080fd5b6047609d565b6040518082815260200191505060405180910390f35b606360a3565b604051808215151515815260200191505060405180910390f35b608360b6565b604051808215151515815260200191505060405180910390f35b60005481565b600160009054906101000a900460ff1681565b6001809054906101000a900460ff168156fea265627a7a72315820862faee64dfcd10bfb1dad3184f6b677c7c60f7e8a11efd5505047cb31bef9b864736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c80635dbe4d28146041578063a8bef97a14605d578063e80b30a514607d575b600080fd5b6047609d565b6040518082815260200191505060405180910390f35b606360a3565b604051808215151515815260200191505060405180910390f35b608360b6565b604051808215151515815260200191505060405180910390f35b60005481565b600160009054906101000a900460ff1681565b6001809054906101000a900460ff168156fea265627a7a72315820862faee64dfcd10bfb1dad3184f6b677c7c60f7e8a11efd5505047cb31bef9b864736f6c634300050c0032",
+  "sourceMap": "78:166:2:-;;;180:1;147:34;;78:166;8:9:-1;5:2;;;30:1;27;20:12;5:2;78:166:2;;;;;;;",
+  "deployedSourceMap": "78:166:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;78:166:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;147:34;;;:::i;:::-;;;;;;;;;;;;;;;;;;;188:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;216:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;147:34;;;;:::o;188:21::-;;;;;;;;;;;;;:::o;216:24::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.6.0;\r\n\r\n\r\n\r\n/// @title Standard organ contract\r\n\r\ncontract Kelsen {\r\n        // Identifiers for Dapp using Kelsen\r\n    int public kelsenVersionNumber = 2;\r\n    bool public isAnOrgan;\r\n    bool public isAProcedure;\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Ewan Debove\\Documents\\A5\\Blockchain Programming\\TD7\\contracts\\utils\\Kelsen\\solidity\\contracts\\Kelsen.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Kelsen.sol",
+    "exportedSymbols": {
+      "Kelsen": [
+        124
+      ]
+    },
+    "id": 125,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 116,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Standard organ contract",
+        "fullyImplemented": true,
+        "id": 124,
+        "linearizedBaseContracts": [
+          124
+        ],
+        "name": "Kelsen",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 119,
+            "name": "kelsenVersionNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 124,
+            "src": "147:34:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_int256",
+              "typeString": "int256"
+            },
+            "typeName": {
+              "id": 117,
+              "name": "int",
+              "nodeType": "ElementaryTypeName",
+              "src": "147:3:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "32",
+              "id": 118,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "180:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2_by_1",
+                "typeString": "int_const 2"
+              },
+              "value": "2"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 121,
+            "name": "isAnOrgan",
+            "nodeType": "VariableDeclaration",
+            "scope": 124,
+            "src": "188:21:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 120,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "188:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 123,
+            "name": "isAProcedure",
+            "nodeType": "VariableDeclaration",
+            "scope": 124,
+            "src": "216:24:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 122,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "216:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 125,
+        "src": "78:166:2"
+      }
+    ],
+    "src": "0:246:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Kelsen.sol",
+    "exportedSymbols": {
+      "Kelsen": [
+        124
+      ]
+    },
+    "id": 125,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 116,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Standard organ contract",
+        "fullyImplemented": true,
+        "id": 124,
+        "linearizedBaseContracts": [
+          124
+        ],
+        "name": "Kelsen",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 119,
+            "name": "kelsenVersionNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 124,
+            "src": "147:34:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_int256",
+              "typeString": "int256"
+            },
+            "typeName": {
+              "id": 117,
+              "name": "int",
+              "nodeType": "ElementaryTypeName",
+              "src": "147:3:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "32",
+              "id": 118,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "180:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2_by_1",
+                "typeString": "int_const 2"
+              },
+              "value": "2"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 121,
+            "name": "isAnOrgan",
+            "nodeType": "VariableDeclaration",
+            "scope": 124,
+            "src": "188:21:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 120,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "188:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 123,
+            "name": "isAProcedure",
+            "nodeType": "VariableDeclaration",
+            "scope": 124,
+            "src": "216:24:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 122,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "216:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 125,
+        "src": "78:166:2"
+      }
+    ],
+    "src": "0:246:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-12-04T11:02:18.894Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Standard organ contract"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

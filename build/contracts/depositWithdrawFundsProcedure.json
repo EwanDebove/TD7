@@ -1,0 +1,3748 @@
+{
+  "contractName": "depositWithdrawFundsProcedure",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_authorizedDepositors",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "_authorizedWithdrawers",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "_defaultReceivingOrgan",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_payoutAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositedFunds",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_payoutAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrewFunds",
+      "type": "event"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isAProcedure",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isAnOrgan",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "kelsenVersionNumber",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "linkedOrgans",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "firstOrganAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "secondOrganAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "thirdOrganAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "procedureInfo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "procedureTypeNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "procedureName",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "linkedOrgans",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_targetOrgan",
+          "type": "address"
+        }
+      ],
+      "name": "depositToOrgan",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_targetOrgan",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawOnOrgan",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_authorizedDepositors\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"_authorizedWithdrawers\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"_defaultReceivingOrgan\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_payoutAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"depositedFunds\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_payoutAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdrewFunds\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_targetOrgan\",\"type\":\"address\"}],\"name\":\"depositToOrgan\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isAProcedure\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isAnOrgan\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"kelsenVersionNumber\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"linkedOrgans\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"firstOrganAddress\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"secondOrganAddress\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"thirdOrganAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"procedureInfo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"procedureTypeNumber\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"procedureName\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"linkedOrgans\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_targetOrgan\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"_receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdrawOnOrgan\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/procedures/depositWithdrawFundsProcedure.sol\":\"depositWithdrawFundsProcedure\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Kelsen.sol\":{\"keccak256\":\"0x314aaf6911a13b93dc0984240493e5544955690194a8eb21b467ffb1f896bda9\",\"urls\":[\"bzz-raw://0de21f6ccd72bbee9d2e195854682337848938043c2c9a26b418408f42b79328\",\"dweb:/ipfs/QmXmHEQf31LW5q7RT1AbzJs4fyNkwXYGUo3iaoiHAU52ti\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Organ.sol\":{\"keccak256\":\"0x13b070680525164716d73e24659f0ffd613566a9d084bf4b7c1bfcd8b2838648\",\"urls\":[\"bzz-raw://5ff5dc2a46f1ec964321fb3b8b1b8602ac94e9b7d293f2e4e3a82b8fea972f90\",\"dweb:/ipfs/QmRE1Q1Yb55LR38s5Yoe52vri6j4mscUZhGfWsLKZ1Pjxr\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/organLibrary.sol\":{\"keccak256\":\"0x285c637b569382e5a1c6bc2dbf6875b7cb98a40b976e3c3da4b163ecb2d81f82\",\"urls\":[\"bzz-raw://5bde2c4a7fa298d2cc3825205e058013dc2593a4160a4ae33675cc2f3cb425c5\",\"dweb:/ipfs/QmaJPfZKCZCzicnBCA4BKDDceiANG7Skemzczw5uAnbhdR\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/procedureLibrary.sol\":{\"keccak256\":\"0xf795216cedff7d2ade2e2ebc3a3f60f8d814efdf8976a4eac3e13e28aca1dcaf\",\"urls\":[\"bzz-raw://de84b8c06749869a2356328c398e9361b9480d3495a945887bceb77095142acb\",\"dweb:/ipfs/QmNkW5zCTj7hs3t9FwWPNHx3tJPmYCHGmWhRUupdTws5ah\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/procedures/depositWithdrawFundsProcedure.sol\":{\"keccak256\":\"0x14cd9d132c02aaa1a7c2820a73b4019fc396d28ae893160126d3d417653a98f6\",\"urls\":[\"bzz-raw://d976f9611c3b412ed7d3088d6c67c3bdb600ad6a6683aa5657b6c7e0125c3755\",\"dweb:/ipfs/QmXzjtyjmYb4NRuW46duvmo41BWnxH22KufdvwN8RKVXjN\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/standardProcedure.sol\":{\"keccak256\":\"0x05c9042a58a5a503dcc114448df3d86025aa85417238f74d77cdddab9445699f\",\"urls\":[\"bzz-raw://9319047a2b2f945617f84de6db90a4bd9303762c45155bd8daea4bce2591b7a5\",\"dweb:/ipfs/QmYX2gzDG5xwcvPKPyNkdcLciZr99AN9siLYEBWfLmuUjC\"]}},\"version\":1}",
+  "bytecode": "0x608060405260026000556000600560006101000a81548160ff0219169083151502179055506001600560016101000a81548160ff02191690831515021790555034801561004b57600080fd5b506040516109c33803806109c38339818101604052608081101561006e57600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050600273__procedureLibrary______________________6356e77656909160098460036040518563ffffffff1660e01b81526004018085815260200184815260200183815260200182815260200194505050505060006040518083038186803b15801561010957600080fd5b505af415801561011d573d6000803e3d6000fd5b50505050600673__procedureLibrary______________________63e7d640db90918686866040518563ffffffff1660e01b8152600401808581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060006040518083038186803b15801561020f57600080fd5b505af4158015610223573d6000803e3d6000fd5b50505050505050506107898061023a6000396000f3fe6080604052600436106100705760003560e01c80639397942e1161004e5780639397942e1461018a5780639e3dd259146101c3578063a8bef97a14610280578063e80b30a5146102af57610070565b806332518e00146100a05780635dbe4d281461011b5780638604271714610146575b61009e600660020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166102de565b005b3480156100ac57600080fd5b50610119600480360360608110156100c357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061044f565b005b34801561012757600080fd5b506101306105c6565b6040518082815260200191505060405180910390f35b6101886004803603602081101561015c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102de565b005b34801561019657600080fd5b5061019f6105cc565b60405180848152602001838152602001828152602001935050505060405180910390f35b3480156101cf57600080fd5b506101d86105e4565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b34801561028c57600080fd5b5061029561065c565b604051808215151515815260200191505060405180910390f35b3480156102bb57600080fd5b506102c461066f565b604051808215151515815260200191505060405180910390f35b600073ffffffffffffffffffffffffffffffffffffffff16600660000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461036657610365600660000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610682565b5b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156103ac573d6000803e3d6000fd5b507f9ba2320cd77403ddf10e62bb77145a1658f32e86971f41eef53b724d39bcb0a8338234604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a150565b61047d600660010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610682565b60008390508073ffffffffffffffffffffffffffffffffffffffff1663117de2fd84846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050600060405180830381600087803b15801561050957600080fd5b505af115801561051d573d6000803e3d6000fd5b505050507ffa42098c79fa91f5f4432962c3274dd6ff49a5819b2b349ce0350b620d307ebc843384604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a150505050565b60005481565b60028060000154908060010154908060020154905083565b60068060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b600560009054906101000a900460ff1681565b600560019054906101000a900460ff1681565b600081905060008173ffffffffffffffffffffffffffffffffffffffff16635549ea51336040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561070657600080fd5b505afa15801561071a573d6000803e3d6000fd5b505050506040513d602081101561073057600080fd5b8101908080519060200190929190505050141561074c57600080fd5b60009150505056fea265627a7a72315820d2cde40e20b021b5c31b6e517fd662776294d4ee80d95dc7e43f9b91a420645964736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600436106100705760003560e01c80639397942e1161004e5780639397942e1461018a5780639e3dd259146101c3578063a8bef97a14610280578063e80b30a5146102af57610070565b806332518e00146100a05780635dbe4d281461011b5780638604271714610146575b61009e600660020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166102de565b005b3480156100ac57600080fd5b50610119600480360360608110156100c357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061044f565b005b34801561012757600080fd5b506101306105c6565b6040518082815260200191505060405180910390f35b6101886004803603602081101561015c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102de565b005b34801561019657600080fd5b5061019f6105cc565b60405180848152602001838152602001828152602001935050505060405180910390f35b3480156101cf57600080fd5b506101d86105e4565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b34801561028c57600080fd5b5061029561065c565b604051808215151515815260200191505060405180910390f35b3480156102bb57600080fd5b506102c461066f565b604051808215151515815260200191505060405180910390f35b600073ffffffffffffffffffffffffffffffffffffffff16600660000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461036657610365600660000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610682565b5b8073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156103ac573d6000803e3d6000fd5b507f9ba2320cd77403ddf10e62bb77145a1658f32e86971f41eef53b724d39bcb0a8338234604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a150565b61047d600660010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610682565b60008390508073ffffffffffffffffffffffffffffffffffffffff1663117de2fd84846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050600060405180830381600087803b15801561050957600080fd5b505af115801561051d573d6000803e3d6000fd5b505050507ffa42098c79fa91f5f4432962c3274dd6ff49a5819b2b349ce0350b620d307ebc843384604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a150505050565b60005481565b60028060000154908060010154908060020154905083565b60068060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b600560009054906101000a900460ff1681565b600560019054906101000a900460ff1681565b600081905060008173ffffffffffffffffffffffffffffffffffffffff16635549ea51336040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561070657600080fd5b505afa15801561071a573d6000803e3d6000fd5b505050506040513d602081101561073057600080fd5b8101908080519060200190929190505050141561074c57600080fd5b60009150505056fea265627a7a72315820d2cde40e20b021b5c31b6e517fd662776294d4ee80d95dc7e43f9b91a420645964736f6c634300050c0032",
+  "sourceMap": "151:2476:11:-;;;180:1:2;147:34;;424:5:18;400:29;;;;;;;;;;;;;;;;;;;;463:4;436:31;;;;;;;;;;;;;;;;;;;;1113:345:11;8:9:-1;5:2;;;30:1;27;20:12;5:2;1113:345:11;;;;;;;;;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;1113:345:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1290:13;:27;;;;1318:1;1321:5;1328:1;1290:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1290:40:11;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1290:40:11;;;;1341:12;:38;;;;1380:21;1403:22;1427;1341:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1341:109:11;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1341:109:11;;;;1113:345;;;;151:2476;;;;;;",
+  "deployedSourceMap": "151:2476:11:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1524:46;1539:12;:30;;;;;;;;;;;;1524:14;:46::i;:::-;151:2476;2068:556;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2068:556:11;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2068:556:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;147:34:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;147:34:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1586:474:11;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1586:474:11;;;;;;;;;;;;;;;;;;;:::i;:::-;;186:51:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;186:51:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;870:58:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;870:58:11;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;400:29:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;400:29:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;436:31;;8:9:-1;5:2;;;30:1;27;20:12;5:2;436:31:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1586:474:11;1780:1;1738:44;;:12;:30;;;;;;;;;;;;:44;;;1734:148;;1809:58;1836:12;:30;;;;;;;;;;;;1809:26;:58::i;:::-;1734:148;1929:12;:21;;:32;1951:9;1929:32;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1929:32:11;2001:51;2016:10;2028:12;2042:9;2001:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1586:474;:::o;2068:556::-;2247:59;2274:12;:31;;;;;;;;;;;;2247:26;:59::i;:::-;2380:25;2414:12;2380:47;;2481:19;:26;;;2508:9;2519:7;2481:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2481:46:11;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2481:46:11;;;;2567:49;2582:12;2596:10;2608:7;2567:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2068:556;;;;:::o;147:34:2:-;;;;:::o;186:51:18:-;;;;;;;;;;;;;;;;;;;:::o;870:58:11:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;400:29:18:-;;;;;;;;;;;;;:::o;436:31::-;;;;;;;;;;;;;:::o;2609:302:7:-;2743:26;2778:13;2743:49;;2872:1;2811:20;:45;;;2857:10;2811:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2811:57:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2811:57:7;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2811:57:7;;;;;;;;;;;;;;;;:62;;2803:71;;;;;;2883:20;;;2609:302;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.6.0;\r\n\r\n// Standard contract for promulgation of a norm\r\n\r\nimport \"../standardProcedure.sol\";\r\nimport \"../Organ.sol\";\r\n\r\n\r\ncontract depositWithdrawFundsProcedure is Procedure{\r\n    // 1: Cyclical many to one election (Presidential Election)\r\n    // 2: Cyclical many to many election (Moderators Election)\r\n    // 3: Simple norm nomination \r\n    // 4: Simple admins and master nomination\r\n    // 5: Vote on Norms \r\n    // 6: Vote on masters and admins \r\n    // 7: Cooptation\r\n    // 8: Vote on an expense\r\n    // 9: Deposit/Withdraw funds on an organ\r\n\r\n    using procedureLibrary for procedureLibrary.threeRegisteredOrgans;\r\n\r\n    // First stakeholder address is authorizedDepositorsOrganContract\r\n    // Second stakeholder address is authorizedWithdrawersOrganContract\r\n    // Third stakeholder address is defaultReceivingOrganContract\r\n    procedureLibrary.threeRegisteredOrgans public linkedOrgans;\r\n\r\n    // Events\r\n    event depositedFunds(address _from, address _payoutAddress, uint _amount);\r\n    event withdrewFunds(address _from, address _payoutAddress, uint _amount);\r\n\r\n    constructor (address payable _authorizedDepositors, address payable _authorizedWithdrawers, address payable _defaultReceivingOrgan, bytes32 _name) \r\n    public \r\n    {\r\n        procedureInfo.initProcedure(9, _name, 3);\r\n        linkedOrgans.initThreeRegisteredOrgans(_authorizedDepositors, _authorizedWithdrawers, _defaultReceivingOrgan);\r\n    }\r\n\r\n    function () \r\n    external \r\n    payable \r\n    {\r\n        depositToOrgan(linkedOrgans.thirdOrganAddress);\r\n    }\r\n\r\n    function depositToOrgan(address payable _targetOrgan) \r\n    public \r\n    payable \r\n    {\r\n        // Checking if depositors are restricted\r\n        if (linkedOrgans.firstOrganAddress != address(0)) \r\n        {\r\n            procedureLibrary.isAllowed(linkedOrgans.firstOrganAddress);   \r\n        }\r\n\r\n        // Sending funds to organ\r\n        _targetOrgan.transfer(msg.value);\r\n\r\n        // Log event\r\n        emit depositedFunds(msg.sender, _targetOrgan, msg.value);\r\n    }\r\n\r\n    function withdrawOnOrgan(address payable _targetOrgan, address payable _receiver, uint _amount) \r\n    public \r\n    {\r\n\r\n        // Checking if withdrawers are restricted\r\n        procedureLibrary.isAllowed(linkedOrgans.secondOrganAddress);    \r\n   \r\n        // Instanciating target organ for withdrawal\r\n        Organ organToWithdrawFrom = Organ(_targetOrgan);\r\n\r\n        // Withdrawing funds from organ\r\n        organToWithdrawFrom.payout(_receiver, _amount);\r\n\r\n        // Log event\r\n        emit withdrewFunds( _targetOrgan, msg.sender, _amount);\r\n    }\r\n}\r\n\r\n",
+  "sourcePath": "C:/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/procedures/depositWithdrawFundsProcedure.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/procedures/depositWithdrawFundsProcedure.sol",
+    "exportedSymbols": {
+      "depositWithdrawFundsProcedure": [
+        5003
+      ]
+    },
+    "id": 5004,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4867,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:11"
+      },
+      {
+        "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/standardProcedure.sol",
+        "file": "../standardProcedure.sol",
+        "id": 4868,
+        "nodeType": "ImportDirective",
+        "scope": 5004,
+        "sourceUnit": 7919,
+        "src": "87:34:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Organ.sol",
+        "file": "../Organ.sol",
+        "id": 4869,
+        "nodeType": "ImportDirective",
+        "scope": 5004,
+        "sourceUnit": 511,
+        "src": "123:22:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4870,
+              "name": "Procedure",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7918,
+              "src": "193:9:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Procedure_$7918",
+                "typeString": "contract Procedure"
+              }
+            },
+            "id": 4871,
+            "nodeType": "InheritanceSpecifier",
+            "src": "193:9:11"
+          }
+        ],
+        "contractDependencies": [
+          83,
+          7918
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5003,
+        "linearizedBaseContracts": [
+          5003,
+          7918,
+          83
+        ],
+        "name": "depositWithdrawFundsProcedure",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 4874,
+            "libraryName": {
+              "contractScope": null,
+              "id": 4872,
+              "name": "procedureLibrary",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3200,
+              "src": "591:16:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_procedureLibrary_$3200",
+                "typeString": "library procedureLibrary"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "585:66:11",
+            "typeName": {
+              "contractScope": null,
+              "id": 4873,
+              "name": "procedureLibrary.threeRegisteredOrgans",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3031,
+              "src": "612:38:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage_ptr",
+                "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 4876,
+            "name": "linkedOrgans",
+            "nodeType": "VariableDeclaration",
+            "scope": 5003,
+            "src": "870:58:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+              "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4875,
+              "name": "procedureLibrary.threeRegisteredOrgans",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3031,
+              "src": "870:38:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage_ptr",
+                "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4884,
+            "name": "depositedFunds",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4883,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4878,
+                  "indexed": false,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4884,
+                  "src": "973:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4877,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "973:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4880,
+                  "indexed": false,
+                  "name": "_payoutAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4884,
+                  "src": "988:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4879,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "988:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4882,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4884,
+                  "src": "1012:12:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4881,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1012:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "972:53:11"
+            },
+            "src": "952:74:11"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4892,
+            "name": "withdrewFunds",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4891,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4886,
+                  "indexed": false,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4892,
+                  "src": "1052:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4885,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1052:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4888,
+                  "indexed": false,
+                  "name": "_payoutAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4892,
+                  "src": "1067:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4887,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1067:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4890,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4892,
+                  "src": "1091:12:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4889,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1091:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1051:53:11"
+            },
+            "src": "1032:73:11"
+          },
+          {
+            "body": {
+              "id": 4919,
+              "nodeType": "Block",
+              "src": "1279:179:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "39",
+                        "id": 4906,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1318:1:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_9_by_1",
+                          "typeString": "int_const 9"
+                        },
+                        "value": "9"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4907,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4900,
+                        "src": "1321:5:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "33",
+                        "id": 4908,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1328:1:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_3_by_1",
+                          "typeString": "int_const 3"
+                        },
+                        "value": "3"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_9_by_1",
+                          "typeString": "int_const 9"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_3_by_1",
+                          "typeString": "int_const 3"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4903,
+                        "name": "procedureInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7905,
+                        "src": "1290:13:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3016_storage",
+                          "typeString": "struct procedureLibrary.ProcedureData storage ref"
+                        }
+                      },
+                      "id": 4905,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "initProcedure",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3070,
+                      "src": "1290:27:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_ProcedureData_$3016_storage_ptr_$_t_uint256_$_t_bytes32_$_t_uint256_$returns$__$bound_to$_t_struct$_ProcedureData_$3016_storage_ptr_$",
+                        "typeString": "function (struct procedureLibrary.ProcedureData storage pointer,uint256,bytes32,uint256)"
+                      }
+                    },
+                    "id": 4909,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1290:40:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4910,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1290:40:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4914,
+                        "name": "_authorizedDepositors",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4894,
+                        "src": "1380:21:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4915,
+                        "name": "_authorizedWithdrawers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4896,
+                        "src": "1403:22:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4916,
+                        "name": "_defaultReceivingOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4898,
+                        "src": "1427:22:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4911,
+                        "name": "linkedOrgans",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4876,
+                        "src": "1341:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                        }
+                      },
+                      "id": 4913,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "initThreeRegisteredOrgans",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3136,
+                      "src": "1341:38:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_threeRegisteredOrgans_$3031_storage_ptr_$_t_address_payable_$_t_address_payable_$_t_address_payable_$returns$__$bound_to$_t_struct$_threeRegisteredOrgans_$3031_storage_ptr_$",
+                        "typeString": "function (struct procedureLibrary.threeRegisteredOrgans storage pointer,address payable,address payable,address payable)"
+                      }
+                    },
+                    "id": 4917,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1341:109:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4918,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1341:109:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4920,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4894,
+                  "name": "_authorizedDepositors",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1126:37:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4893,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1126:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4896,
+                  "name": "_authorizedWithdrawers",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1165:38:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4895,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4898,
+                  "name": "_defaultReceivingOrgan",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1205:38:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4897,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4900,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1245:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4899,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1245:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1125:134:11"
+            },
+            "returnParameters": {
+              "id": 4902,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1279:0:11"
+            },
+            "scope": 5003,
+            "src": "1113:345:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4928,
+              "nodeType": "Block",
+              "src": "1513:65:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4924,
+                          "name": "linkedOrgans",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4876,
+                          "src": "1539:12:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                            "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                          }
+                        },
+                        "id": 4925,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "thirdOrganAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3030,
+                        "src": "1539:30:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 4923,
+                      "name": "depositToOrgan",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4965,
+                      "src": "1524:14:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable)"
+                      }
+                    },
+                    "id": 4926,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1524:46:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4927,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1524:46:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4929,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4921,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1475:2:11"
+            },
+            "returnParameters": {
+              "id": 4922,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1513:0:11"
+            },
+            "scope": 5003,
+            "src": "1466:112:11",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4964,
+              "nodeType": "Block",
+              "src": "1673:387:11",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    },
+                    "id": 4939,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4934,
+                        "name": "linkedOrgans",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4876,
+                        "src": "1738:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                        }
+                      },
+                      "id": 4935,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3026,
+                      "src": "1738:30:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 4937,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1780:1:11",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 4936,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1772:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 4938,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1772:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1738:44:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 4948,
+                  "nodeType": "IfStatement",
+                  "src": "1734:148:11",
+                  "trueBody": {
+                    "id": 4947,
+                    "nodeType": "Block",
+                    "src": "1794:88:11",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 4943,
+                                "name": "linkedOrgans",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 4876,
+                                "src": "1836:12:11",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                                  "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                                }
+                              },
+                              "id": 4944,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "firstOrganAddress",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 3026,
+                              "src": "1836:30:11",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 4940,
+                              "name": "procedureLibrary",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3200,
+                              "src": "1809:16:11",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_procedureLibrary_$3200_$",
+                                "typeString": "type(library procedureLibrary)"
+                              }
+                            },
+                            "id": 4942,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "isAllowed",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 3199,
+                            "src": "1809:26:11",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$_t_address_payable_$returns$__$",
+                              "typeString": "function (address payable) view"
+                            }
+                          },
+                          "id": 4945,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1809:58:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 4946,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1809:58:11"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4952,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "1951:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4953,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1951:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4949,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4931,
+                        "src": "1929:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 4951,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1929:21:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 4954,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1929:32:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4955,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1929:32:11"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4957,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "2016:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4958,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2016:10:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4959,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4931,
+                        "src": "2028:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4960,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "2042:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4961,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2042:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4956,
+                      "name": "depositedFunds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4884,
+                      "src": "2001:14:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,uint256)"
+                      }
+                    },
+                    "id": 4962,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2001:51:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4963,
+                  "nodeType": "EmitStatement",
+                  "src": "1996:56:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4965,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "depositToOrgan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4932,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4931,
+                  "name": "_targetOrgan",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4965,
+                  "src": "1610:28:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4930,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1610:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1609:30:11"
+            },
+            "returnParameters": {
+              "id": 4933,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1673:0:11"
+            },
+            "scope": 5003,
+            "src": "1586:474:11",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5001,
+              "nodeType": "Block",
+              "src": "2183:441:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4977,
+                          "name": "linkedOrgans",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4876,
+                          "src": "2274:12:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                            "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                          }
+                        },
+                        "id": 4978,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "secondOrganAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3028,
+                        "src": "2274:31:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4974,
+                        "name": "procedureLibrary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3200,
+                        "src": "2247:16:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_procedureLibrary_$3200_$",
+                          "typeString": "type(library procedureLibrary)"
+                        }
+                      },
+                      "id": 4976,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isAllowed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3199,
+                      "src": "2247:26:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable) view"
+                      }
+                    },
+                    "id": 4979,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2247:59:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4980,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2247:59:11"
+                },
+                {
+                  "assignments": [
+                    4982
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4982,
+                      "name": "organToWithdrawFrom",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5001,
+                      "src": "2380:25:11",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Organ_$510",
+                        "typeString": "contract Organ"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 4981,
+                        "name": "Organ",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 510,
+                        "src": "2380:5:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Organ_$510",
+                          "typeString": "contract Organ"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4986,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4984,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4967,
+                        "src": "2414:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 4983,
+                      "name": "Organ",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 510,
+                      "src": "2408:5:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_Organ_$510_$",
+                        "typeString": "type(contract Organ)"
+                      }
+                    },
+                    "id": 4985,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2408:19:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Organ_$510",
+                      "typeString": "contract Organ"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2380:47:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4990,
+                        "name": "_receiver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4969,
+                        "src": "2508:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4991,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4971,
+                        "src": "2519:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4987,
+                        "name": "organToWithdrawFrom",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4982,
+                        "src": "2481:19:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Organ_$510",
+                          "typeString": "contract Organ"
+                        }
+                      },
+                      "id": 4989,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "payout",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 205,
+                      "src": "2481:26:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_payable_$_t_uint256_$returns$__$",
+                        "typeString": "function (address payable,uint256) external"
+                      }
+                    },
+                    "id": 4992,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2481:46:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4993,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2481:46:11"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4995,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4967,
+                        "src": "2582:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4996,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "2596:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4997,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2596:10:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4998,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4971,
+                        "src": "2608:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4994,
+                      "name": "withdrewFunds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4892,
+                      "src": "2567:13:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,uint256)"
+                      }
+                    },
+                    "id": 4999,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2567:49:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5000,
+                  "nodeType": "EmitStatement",
+                  "src": "2562:54:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5002,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdrawOnOrgan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4972,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4967,
+                  "name": "_targetOrgan",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5002,
+                  "src": "2093:28:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4966,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2093:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4969,
+                  "name": "_receiver",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5002,
+                  "src": "2123:25:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4968,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2123:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4971,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5002,
+                  "src": "2150:12:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4970,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2150:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2092:71:11"
+            },
+            "returnParameters": {
+              "id": 4973,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2183:0:11"
+            },
+            "scope": 5003,
+            "src": "2068:556:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5004,
+        "src": "151:2476:11"
+      }
+    ],
+    "src": "0:2631:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/procedures/depositWithdrawFundsProcedure.sol",
+    "exportedSymbols": {
+      "depositWithdrawFundsProcedure": [
+        5003
+      ]
+    },
+    "id": 5004,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4867,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:11"
+      },
+      {
+        "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/standardProcedure.sol",
+        "file": "../standardProcedure.sol",
+        "id": 4868,
+        "nodeType": "ImportDirective",
+        "scope": 5004,
+        "sourceUnit": 7919,
+        "src": "87:34:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Organ.sol",
+        "file": "../Organ.sol",
+        "id": 4869,
+        "nodeType": "ImportDirective",
+        "scope": 5004,
+        "sourceUnit": 511,
+        "src": "123:22:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4870,
+              "name": "Procedure",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 7918,
+              "src": "193:9:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Procedure_$7918",
+                "typeString": "contract Procedure"
+              }
+            },
+            "id": 4871,
+            "nodeType": "InheritanceSpecifier",
+            "src": "193:9:11"
+          }
+        ],
+        "contractDependencies": [
+          83,
+          7918
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5003,
+        "linearizedBaseContracts": [
+          5003,
+          7918,
+          83
+        ],
+        "name": "depositWithdrawFundsProcedure",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 4874,
+            "libraryName": {
+              "contractScope": null,
+              "id": 4872,
+              "name": "procedureLibrary",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3200,
+              "src": "591:16:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_procedureLibrary_$3200",
+                "typeString": "library procedureLibrary"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "585:66:11",
+            "typeName": {
+              "contractScope": null,
+              "id": 4873,
+              "name": "procedureLibrary.threeRegisteredOrgans",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3031,
+              "src": "612:38:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage_ptr",
+                "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 4876,
+            "name": "linkedOrgans",
+            "nodeType": "VariableDeclaration",
+            "scope": 5003,
+            "src": "870:58:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+              "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4875,
+              "name": "procedureLibrary.threeRegisteredOrgans",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3031,
+              "src": "870:38:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage_ptr",
+                "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4884,
+            "name": "depositedFunds",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4883,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4878,
+                  "indexed": false,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4884,
+                  "src": "973:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4877,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "973:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4880,
+                  "indexed": false,
+                  "name": "_payoutAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4884,
+                  "src": "988:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4879,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "988:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4882,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4884,
+                  "src": "1012:12:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4881,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1012:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "972:53:11"
+            },
+            "src": "952:74:11"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4892,
+            "name": "withdrewFunds",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4891,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4886,
+                  "indexed": false,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4892,
+                  "src": "1052:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4885,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1052:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4888,
+                  "indexed": false,
+                  "name": "_payoutAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4892,
+                  "src": "1067:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4887,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1067:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4890,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4892,
+                  "src": "1091:12:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4889,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1091:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1051:53:11"
+            },
+            "src": "1032:73:11"
+          },
+          {
+            "body": {
+              "id": 4919,
+              "nodeType": "Block",
+              "src": "1279:179:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "39",
+                        "id": 4906,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1318:1:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_9_by_1",
+                          "typeString": "int_const 9"
+                        },
+                        "value": "9"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4907,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4900,
+                        "src": "1321:5:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "33",
+                        "id": 4908,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1328:1:11",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_3_by_1",
+                          "typeString": "int_const 3"
+                        },
+                        "value": "3"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_9_by_1",
+                          "typeString": "int_const 9"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_3_by_1",
+                          "typeString": "int_const 3"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4903,
+                        "name": "procedureInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7905,
+                        "src": "1290:13:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3016_storage",
+                          "typeString": "struct procedureLibrary.ProcedureData storage ref"
+                        }
+                      },
+                      "id": 4905,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "initProcedure",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3070,
+                      "src": "1290:27:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_ProcedureData_$3016_storage_ptr_$_t_uint256_$_t_bytes32_$_t_uint256_$returns$__$bound_to$_t_struct$_ProcedureData_$3016_storage_ptr_$",
+                        "typeString": "function (struct procedureLibrary.ProcedureData storage pointer,uint256,bytes32,uint256)"
+                      }
+                    },
+                    "id": 4909,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1290:40:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4910,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1290:40:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4914,
+                        "name": "_authorizedDepositors",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4894,
+                        "src": "1380:21:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4915,
+                        "name": "_authorizedWithdrawers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4896,
+                        "src": "1403:22:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4916,
+                        "name": "_defaultReceivingOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4898,
+                        "src": "1427:22:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4911,
+                        "name": "linkedOrgans",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4876,
+                        "src": "1341:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                        }
+                      },
+                      "id": 4913,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "initThreeRegisteredOrgans",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3136,
+                      "src": "1341:38:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_threeRegisteredOrgans_$3031_storage_ptr_$_t_address_payable_$_t_address_payable_$_t_address_payable_$returns$__$bound_to$_t_struct$_threeRegisteredOrgans_$3031_storage_ptr_$",
+                        "typeString": "function (struct procedureLibrary.threeRegisteredOrgans storage pointer,address payable,address payable,address payable)"
+                      }
+                    },
+                    "id": 4917,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1341:109:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4918,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1341:109:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4920,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4894,
+                  "name": "_authorizedDepositors",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1126:37:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4893,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1126:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4896,
+                  "name": "_authorizedWithdrawers",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1165:38:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4895,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4898,
+                  "name": "_defaultReceivingOrgan",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1205:38:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4897,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4900,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "1245:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4899,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1245:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1125:134:11"
+            },
+            "returnParameters": {
+              "id": 4902,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1279:0:11"
+            },
+            "scope": 5003,
+            "src": "1113:345:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4928,
+              "nodeType": "Block",
+              "src": "1513:65:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4924,
+                          "name": "linkedOrgans",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4876,
+                          "src": "1539:12:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                            "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                          }
+                        },
+                        "id": 4925,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "thirdOrganAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3030,
+                        "src": "1539:30:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 4923,
+                      "name": "depositToOrgan",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4965,
+                      "src": "1524:14:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable)"
+                      }
+                    },
+                    "id": 4926,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1524:46:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4927,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1524:46:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4929,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4921,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1475:2:11"
+            },
+            "returnParameters": {
+              "id": 4922,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1513:0:11"
+            },
+            "scope": 5003,
+            "src": "1466:112:11",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4964,
+              "nodeType": "Block",
+              "src": "1673:387:11",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    },
+                    "id": 4939,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4934,
+                        "name": "linkedOrgans",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4876,
+                        "src": "1738:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                        }
+                      },
+                      "id": 4935,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3026,
+                      "src": "1738:30:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 4937,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1780:1:11",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 4936,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1772:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 4938,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1772:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1738:44:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 4948,
+                  "nodeType": "IfStatement",
+                  "src": "1734:148:11",
+                  "trueBody": {
+                    "id": 4947,
+                    "nodeType": "Block",
+                    "src": "1794:88:11",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 4943,
+                                "name": "linkedOrgans",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 4876,
+                                "src": "1836:12:11",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                                  "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                                }
+                              },
+                              "id": 4944,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "firstOrganAddress",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 3026,
+                              "src": "1836:30:11",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 4940,
+                              "name": "procedureLibrary",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3200,
+                              "src": "1809:16:11",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_procedureLibrary_$3200_$",
+                                "typeString": "type(library procedureLibrary)"
+                              }
+                            },
+                            "id": 4942,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "isAllowed",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 3199,
+                            "src": "1809:26:11",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$_t_address_payable_$returns$__$",
+                              "typeString": "function (address payable) view"
+                            }
+                          },
+                          "id": 4945,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1809:58:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 4946,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1809:58:11"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4952,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "1951:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4953,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1951:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4949,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4931,
+                        "src": "1929:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 4951,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1929:21:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 4954,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1929:32:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4955,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1929:32:11"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4957,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "2016:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4958,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2016:10:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4959,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4931,
+                        "src": "2028:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4960,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "2042:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4961,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2042:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4956,
+                      "name": "depositedFunds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4884,
+                      "src": "2001:14:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,uint256)"
+                      }
+                    },
+                    "id": 4962,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2001:51:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4963,
+                  "nodeType": "EmitStatement",
+                  "src": "1996:56:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4965,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "depositToOrgan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4932,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4931,
+                  "name": "_targetOrgan",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4965,
+                  "src": "1610:28:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4930,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1610:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1609:30:11"
+            },
+            "returnParameters": {
+              "id": 4933,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1673:0:11"
+            },
+            "scope": 5003,
+            "src": "1586:474:11",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5001,
+              "nodeType": "Block",
+              "src": "2183:441:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4977,
+                          "name": "linkedOrgans",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4876,
+                          "src": "2274:12:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3031_storage",
+                            "typeString": "struct procedureLibrary.threeRegisteredOrgans storage ref"
+                          }
+                        },
+                        "id": 4978,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "secondOrganAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3028,
+                        "src": "2274:31:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4974,
+                        "name": "procedureLibrary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3200,
+                        "src": "2247:16:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_procedureLibrary_$3200_$",
+                          "typeString": "type(library procedureLibrary)"
+                        }
+                      },
+                      "id": 4976,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isAllowed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3199,
+                      "src": "2247:26:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable) view"
+                      }
+                    },
+                    "id": 4979,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2247:59:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4980,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2247:59:11"
+                },
+                {
+                  "assignments": [
+                    4982
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4982,
+                      "name": "organToWithdrawFrom",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5001,
+                      "src": "2380:25:11",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Organ_$510",
+                        "typeString": "contract Organ"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 4981,
+                        "name": "Organ",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 510,
+                        "src": "2380:5:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Organ_$510",
+                          "typeString": "contract Organ"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4986,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4984,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4967,
+                        "src": "2414:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 4983,
+                      "name": "Organ",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 510,
+                      "src": "2408:5:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_Organ_$510_$",
+                        "typeString": "type(contract Organ)"
+                      }
+                    },
+                    "id": 4985,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2408:19:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Organ_$510",
+                      "typeString": "contract Organ"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2380:47:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4990,
+                        "name": "_receiver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4969,
+                        "src": "2508:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4991,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4971,
+                        "src": "2519:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4987,
+                        "name": "organToWithdrawFrom",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4982,
+                        "src": "2481:19:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Organ_$510",
+                          "typeString": "contract Organ"
+                        }
+                      },
+                      "id": 4989,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "payout",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 205,
+                      "src": "2481:26:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_payable_$_t_uint256_$returns$__$",
+                        "typeString": "function (address payable,uint256) external"
+                      }
+                    },
+                    "id": 4992,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2481:46:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4993,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2481:46:11"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4995,
+                        "name": "_targetOrgan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4967,
+                        "src": "2582:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4996,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9892,
+                          "src": "2596:3:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 4997,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2596:10:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4998,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4971,
+                        "src": "2608:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4994,
+                      "name": "withdrewFunds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4892,
+                      "src": "2567:13:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,uint256)"
+                      }
+                    },
+                    "id": 4999,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2567:49:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5000,
+                  "nodeType": "EmitStatement",
+                  "src": "2562:54:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5002,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdrawOnOrgan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4972,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4967,
+                  "name": "_targetOrgan",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5002,
+                  "src": "2093:28:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4966,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2093:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4969,
+                  "name": "_receiver",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5002,
+                  "src": "2123:25:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 4968,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2123:15:11",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4971,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5002,
+                  "src": "2150:12:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4970,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2150:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2092:71:11"
+            },
+            "returnParameters": {
+              "id": 4973,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2183:0:11"
+            },
+            "scope": 5003,
+            "src": "2068:556:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5004,
+        "src": "151:2476:11"
+      }
+    ],
+    "src": "0:2631:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-12-04T10:02:32.766Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

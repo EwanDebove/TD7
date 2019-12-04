@@ -1,0 +1,4557 @@
+{
+  "contractName": "procedureLibrary",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"Kelsen Framework Procedure library This library is used to hold the logic common to all procedures*\"}},\"settings\":{\"compilationTarget\":{\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/procedureLibrary.sol\":\"procedureLibrary\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Kelsen.sol\":{\"keccak256\":\"0x314aaf6911a13b93dc0984240493e5544955690194a8eb21b467ffb1f896bda9\",\"urls\":[\"bzz-raw://0de21f6ccd72bbee9d2e195854682337848938043c2c9a26b418408f42b79328\",\"dweb:/ipfs/QmXmHEQf31LW5q7RT1AbzJs4fyNkwXYGUo3iaoiHAU52ti\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Organ.sol\":{\"keccak256\":\"0x13b070680525164716d73e24659f0ffd613566a9d084bf4b7c1bfcd8b2838648\",\"urls\":[\"bzz-raw://5ff5dc2a46f1ec964321fb3b8b1b8602ac94e9b7d293f2e4e3a82b8fea972f90\",\"dweb:/ipfs/QmRE1Q1Yb55LR38s5Yoe52vri6j4mscUZhGfWsLKZ1Pjxr\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/organLibrary.sol\":{\"keccak256\":\"0x285c637b569382e5a1c6bc2dbf6875b7cb98a40b976e3c3da4b163ecb2d81f82\",\"urls\":[\"bzz-raw://5bde2c4a7fa298d2cc3825205e058013dc2593a4160a4ae33675cc2f3cb425c5\",\"dweb:/ipfs/QmaJPfZKCZCzicnBCA4BKDDceiANG7Skemzczw5uAnbhdR\"]},\"/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/procedureLibrary.sol\":{\"keccak256\":\"0xf795216cedff7d2ade2e2ebc3a3f60f8d814efdf8976a4eac3e13e28aca1dcaf\",\"urls\":[\"bzz-raw://de84b8c06749869a2356328c398e9361b9480d3495a945887bceb77095142acb\",\"dweb:/ipfs/QmNkW5zCTj7hs3t9FwWPNHx3tJPmYCHGmWhRUupdTws5ah\"]}},\"version\":1}",
+  "bytecode": "0x6105f5610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100615760003560e01c806356e77656146100665780636f53715a146100bf57806380ac418e1461013a578063e0f43378146101f5578063e7d640db14610250575b600080fd5b81801561007257600080fd5b506100bd6004803603608081101561008957600080fd5b81019080803590602001909291908035906020019092919080359060200190929190803590602001909291905050506102eb565b005b8180156100cb57600080fd5b50610138600480360360608110156100e257600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061030c565b005b81801561014657600080fd5b506101f3600480360360a081101561015d57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610397565b005b81801561020157600080fd5b5061024e6004803603604081101561021857600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104aa565b005b81801561025c57600080fd5b506102e96004803603608081101561027357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104f1565b005b82846000018190555081846001018190555080846002018190555050505050565b818360000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808360010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b838560000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550828560010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818560020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808560030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050505050565b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b828460000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818460010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808460020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050505056fea265627a7a7231582021bdf1ffb5cf5628fba105576c2187f0530e1c8818e3da633185e2230a71c3e564736f6c634300050c0032",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106100615760003560e01c806356e77656146100665780636f53715a146100bf57806380ac418e1461013a578063e0f43378146101f5578063e7d640db14610250575b600080fd5b81801561007257600080fd5b506100bd6004803603608081101561008957600080fd5b81019080803590602001909291908035906020019092919080359060200190929190803590602001909291905050506102eb565b005b8180156100cb57600080fd5b50610138600480360360608110156100e257600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061030c565b005b81801561014657600080fd5b506101f3600480360360a081101561015d57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610397565b005b81801561020157600080fd5b5061024e6004803603604081101561021857600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104aa565b005b81801561025c57600080fd5b506102e96004803603608081101561027357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104f1565b005b82846000018190555081846001018190555080846002018190555050505050565b818360000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808360010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b838560000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550828560010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818560020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808560030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050505050565b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b828460000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818460010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550808460020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050505056fea265627a7a7231582021bdf1ffb5cf5628fba105576c2187f0530e1c8818e3da633185e2230a71c3e564736f6c634300050c0032",
+  "sourceMap": "178:2738:7:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "178:2738:7:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;990:295;;8:9:-1;5:2;;;30:1;27;20:12;5:2;990:295:7;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;990:295:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1481:275;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1481:275:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1481:275:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2141:460;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2141:460:7;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;2141:460:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1293:180;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1293:180:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1293:180:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1764:369;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1764:369:7;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;1764:369:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;990:295;1167:20;1140:4;:24;;:47;;;;1219:14;1198:4;:18;;:35;;;;1264:13;1244:4;:17;;:33;;;;990:295;;;;:::o;1481:275::-;1674:18;1649:4;:22;;;:43;;;;;;;;;;;;;;;;;;1729:19;1703:4;:23;;;:45;;;;;;;;;;;;;;;;;;1481:275;;;:::o;2141:460::-;2409:18;2384:4;:22;;;:43;;;;;;;;;;;;;;;;;;2464:19;2438:4;:23;;;:45;;;;;;;;;;;;;;;;;;2519:18;2494:4;:22;;;:43;;;;;;;;;;;;;;;;;;2574:19;2548:4;:23;;;:45;;;;;;;;;;;;;;;;;;2141:460;;;;;:::o;1293:180::-;1447:18;1422:4;:22;;;:43;;;;;;;;;;;;;;;;;;1293:180;;:::o;1764:369::-;1997:18;1972:4;:22;;;:43;;;;;;;;;;;;;;;;;;2052:19;2026:4;:23;;;:45;;;;;;;;;;;;;;;;;;2107:18;2082:4;:22;;;:43;;;;;;;;;;;;;;;;;;1764:369;;;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.6.0;\r\n\r\nimport \"../Organ.sol\";\r\n\r\n/**\r\n\r\nKelsen Framework\r\nProcedure library\r\nThis library is used to hold the logic common to all procedures\r\n\r\n**/\r\nlibrary procedureLibrary {\r\n  \r\n    struct ProcedureData \r\n    {\r\n        uint procedureTypeNumber;\r\n        bytes32 procedureName;\r\n        uint linkedOrgans;\r\n    }\r\n\r\n    struct oneRegisteredOrgan\r\n    {\r\n        address payable firstOrganAddress;\r\n    }\r\n\r\n    struct twoRegisteredOrgans\r\n    {\r\n        address payable firstOrganAddress;\r\n        address payable secondOrganAddress;\r\n    }\r\n\r\n    struct threeRegisteredOrgans\r\n    {\r\n        address payable firstOrganAddress;\r\n        address payable secondOrganAddress;\r\n        address payable thirdOrganAddress;\r\n    }\r\n\r\n    struct fourRegisteredOrgans\r\n    {\r\n        address payable firstOrganAddress;\r\n        address payable secondOrganAddress;\r\n        address payable thirdOrganAddress;\r\n        address payable fourthOrganAddress;\r\n    }\r\n\r\n    function initProcedure(ProcedureData storage self, uint _procedureTypeNumber, bytes32 _procedureName, uint _linkedOrgans)\r\n    public\r\n    {\r\n        self.procedureTypeNumber = _procedureTypeNumber;\r\n        self.procedureName = _procedureName;\r\n        self.linkedOrgans = _linkedOrgans;\r\n    }\r\n\r\n    function initOneRegisteredOrgan(oneRegisteredOrgan storage self, address payable _firstOrganAddress)\r\n    public\r\n    {\r\n        self.firstOrganAddress = _firstOrganAddress;\r\n    }\r\n\r\n    function initTwoRegisteredOrgans(twoRegisteredOrgans storage self, address payable _firstOrganAddress, address payable _secondOrganAddress)\r\n    public\r\n    {\r\n        self.firstOrganAddress = _firstOrganAddress;\r\n        self.secondOrganAddress = _secondOrganAddress;\r\n    }\r\n\r\n    function initThreeRegisteredOrgans(threeRegisteredOrgans storage self, address payable _firstOrganAddress, address payable _secondOrganAddress, address payable _thirdOrganAddress)\r\n    public\r\n    {\r\n        self.firstOrganAddress = _firstOrganAddress;\r\n        self.secondOrganAddress = _secondOrganAddress;\r\n        self.thirdOrganAddress = _thirdOrganAddress;\r\n    }\r\n\r\n    function initFourRegisteredOrgans(fourRegisteredOrgans storage self, address payable _firstOrganAddress, address payable _secondOrganAddress, address payable _thirdOrganAddress, address payable _fourthOrganAddress)\r\n    public\r\n    {\r\n        self.firstOrganAddress = _firstOrganAddress;\r\n        self.secondOrganAddress = _secondOrganAddress;\r\n        self.thirdOrganAddress = _thirdOrganAddress;\r\n        self.fourthOrganAddress = _fourthOrganAddress;\r\n    }\r\n\r\n    function isAllowed(address payable _organAddress)\r\n    internal\r\n    view\r\n    {\r\n      // Verifying the evaluator is an admin\r\n      Organ authorizedUsersOrgan = Organ(_organAddress);\r\n\r\n      require(authorizedUsersOrgan.getAddressPositionInNorm(msg.sender) != 0);\r\n      delete _organAddress;\r\n    }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\Ewan Debove\\Documents\\A5\\Blockchain Programming\\TD7\\contracts\\utils\\Kelsen\\solidity\\contracts\\libraries\\procedureLibrary.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/procedureLibrary.sol",
+    "exportedSymbols": {
+      "procedureLibrary": [
+        3241
+      ]
+    },
+    "id": 3242,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3049,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:7"
+      },
+      {
+        "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Organ.sol",
+        "file": "../Organ.sol",
+        "id": 3050,
+        "nodeType": "ImportDirective",
+        "scope": 3242,
+        "sourceUnit": 552,
+        "src": "36:22:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "Kelsen Framework\nProcedure library\nThis library is used to hold the logic common to all procedures*",
+        "fullyImplemented": true,
+        "id": 3241,
+        "linearizedBaseContracts": [
+          3241
+        ],
+        "name": "procedureLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "procedureLibrary.ProcedureData",
+            "id": 3057,
+            "members": [
+              {
+                "constant": false,
+                "id": 3052,
+                "name": "procedureTypeNumber",
+                "nodeType": "VariableDeclaration",
+                "scope": 3057,
+                "src": "252:24:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3051,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "252:4:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3054,
+                "name": "procedureName",
+                "nodeType": "VariableDeclaration",
+                "scope": 3057,
+                "src": "287:21:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 3053,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "287:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3056,
+                "name": "linkedOrgans",
+                "nodeType": "VariableDeclaration",
+                "scope": 3057,
+                "src": "319:17:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3055,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "319:4:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ProcedureData",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "214:130:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.oneRegisteredOrgan",
+            "id": 3060,
+            "members": [
+              {
+                "constant": false,
+                "id": 3059,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3060,
+                "src": "394:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3058,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "394:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "oneRegisteredOrgan",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "352:83:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.twoRegisteredOrgans",
+            "id": 3065,
+            "members": [
+              {
+                "constant": false,
+                "id": 3062,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3065,
+                "src": "486:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3061,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "486:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3064,
+                "name": "secondOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3065,
+                "src": "530:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3063,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "530:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "twoRegisteredOrgans",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "443:129:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.threeRegisteredOrgans",
+            "id": 3072,
+            "members": [
+              {
+                "constant": false,
+                "id": 3067,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3072,
+                "src": "625:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3066,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "625:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3069,
+                "name": "secondOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3072,
+                "src": "669:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3068,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "669:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3071,
+                "name": "thirdOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3072,
+                "src": "714:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3070,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "714:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "threeRegisteredOrgans",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "580:175:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.fourRegisteredOrgans",
+            "id": 3081,
+            "members": [
+              {
+                "constant": false,
+                "id": 3074,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "807:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3073,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "807:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3076,
+                "name": "secondOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "851:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3075,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "851:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3078,
+                "name": "thirdOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "896:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3077,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "896:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3080,
+                "name": "fourthOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "940:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3079,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "940:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "fourRegisteredOrgans",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "763:219:7",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3110,
+              "nodeType": "Block",
+              "src": "1129:156:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3096,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3092,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3083,
+                        "src": "1140:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                          "typeString": "struct procedureLibrary.ProcedureData storage pointer"
+                        }
+                      },
+                      "id": 3094,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "procedureTypeNumber",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3052,
+                      "src": "1140:24:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3095,
+                      "name": "_procedureTypeNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3085,
+                      "src": "1167:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1140:47:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3097,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1140:47:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3098,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3083,
+                        "src": "1198:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                          "typeString": "struct procedureLibrary.ProcedureData storage pointer"
+                        }
+                      },
+                      "id": 3100,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "procedureName",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3054,
+                      "src": "1198:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3101,
+                      "name": "_procedureName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3087,
+                      "src": "1219:14:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1198:35:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 3103,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1198:35:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3108,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3104,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3083,
+                        "src": "1244:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                          "typeString": "struct procedureLibrary.ProcedureData storage pointer"
+                        }
+                      },
+                      "id": 3106,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "linkedOrgans",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3056,
+                      "src": "1244:17:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3107,
+                      "name": "_linkedOrgans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3089,
+                      "src": "1264:13:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1244:33:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3109,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1244:33:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3111,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initProcedure",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3090,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3083,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1013:26:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                    "typeString": "struct procedureLibrary.ProcedureData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3082,
+                    "name": "ProcedureData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3057,
+                    "src": "1013:13:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                      "typeString": "struct procedureLibrary.ProcedureData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3085,
+                  "name": "_procedureTypeNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1041:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3084,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1041:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3087,
+                  "name": "_procedureName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1068:22:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3086,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1068:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3089,
+                  "name": "_linkedOrgans",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1092:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3088,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1092:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1012:99:7"
+            },
+            "returnParameters": {
+              "id": 3091,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1129:0:7"
+            },
+            "scope": 3241,
+            "src": "990:295:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3124,
+              "nodeType": "Block",
+              "src": "1411:62:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3122,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3118,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3113,
+                        "src": "1422:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_oneRegisteredOrgan_$3060_storage_ptr",
+                          "typeString": "struct procedureLibrary.oneRegisteredOrgan storage pointer"
+                        }
+                      },
+                      "id": 3120,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3059,
+                      "src": "1422:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3121,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3115,
+                      "src": "1447:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1422:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3123,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1422:43:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3125,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initOneRegisteredOrgan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3116,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3113,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3125,
+                  "src": "1325:31:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_oneRegisteredOrgan_$3060_storage_ptr",
+                    "typeString": "struct procedureLibrary.oneRegisteredOrgan"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3112,
+                    "name": "oneRegisteredOrgan",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3060,
+                    "src": "1325:18:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_oneRegisteredOrgan_$3060_storage_ptr",
+                      "typeString": "struct procedureLibrary.oneRegisteredOrgan"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3115,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3125,
+                  "src": "1358:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3114,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1358:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1324:69:7"
+            },
+            "returnParameters": {
+              "id": 3117,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1411:0:7"
+            },
+            "scope": 3241,
+            "src": "1293:180:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3146,
+              "nodeType": "Block",
+              "src": "1638:118:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3138,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3134,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3127,
+                        "src": "1649:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                          "typeString": "struct procedureLibrary.twoRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3136,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3062,
+                      "src": "1649:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3137,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3129,
+                      "src": "1674:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1649:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3139,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1649:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3140,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3127,
+                        "src": "1703:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                          "typeString": "struct procedureLibrary.twoRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3142,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3064,
+                      "src": "1703:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3143,
+                      "name": "_secondOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3131,
+                      "src": "1729:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1703:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1703:45:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3147,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initTwoRegisteredOrgans",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3132,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3127,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1514:32:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                    "typeString": "struct procedureLibrary.twoRegisteredOrgans"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3126,
+                    "name": "twoRegisteredOrgans",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3065,
+                    "src": "1514:19:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                      "typeString": "struct procedureLibrary.twoRegisteredOrgans"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3129,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1548:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3128,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1548:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3131,
+                  "name": "_secondOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1584:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3130,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1584:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1513:107:7"
+            },
+            "returnParameters": {
+              "id": 3133,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1638:0:7"
+            },
+            "scope": 3241,
+            "src": "1481:275:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3176,
+              "nodeType": "Block",
+              "src": "1961:172:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3158,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "1972:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3160,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3067,
+                      "src": "1972:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3161,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3151,
+                      "src": "1997:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1972:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3163,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1972:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3164,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "2026:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3166,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3069,
+                      "src": "2026:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3167,
+                      "name": "_secondOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3153,
+                      "src": "2052:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2026:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3169,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2026:45:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3170,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "2082:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3172,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "thirdOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3071,
+                      "src": "2082:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3173,
+                      "name": "_thirdOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3155,
+                      "src": "2107:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2082:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3175,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2082:43:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3177,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initThreeRegisteredOrgans",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3156,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3149,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1799:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                    "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3148,
+                    "name": "threeRegisteredOrgans",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3072,
+                    "src": "1799:21:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                      "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3151,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1835:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3150,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1835:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3153,
+                  "name": "_secondOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1871:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1871:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3155,
+                  "name": "_thirdOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1908:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3154,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1908:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1798:145:7"
+            },
+            "returnParameters": {
+              "id": 3157,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1961:0:7"
+            },
+            "scope": 3241,
+            "src": "1764:369:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3214,
+              "nodeType": "Block",
+              "src": "2373:228:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3194,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3190,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2384:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3192,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3074,
+                      "src": "2384:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3193,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3181,
+                      "src": "2409:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2384:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3195,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2384:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3200,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3196,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2438:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3198,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3076,
+                      "src": "2438:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3199,
+                      "name": "_secondOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3183,
+                      "src": "2464:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2438:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3201,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2438:45:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3206,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3202,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2494:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3204,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "thirdOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3078,
+                      "src": "2494:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3205,
+                      "name": "_thirdOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3185,
+                      "src": "2519:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2494:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3207,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2494:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3208,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2548:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3210,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "fourthOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3080,
+                      "src": "2548:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3211,
+                      "name": "_fourthOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3187,
+                      "src": "2574:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2548:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3213,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2548:45:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3215,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initFourRegisteredOrgans",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3188,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3179,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2175:33:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                    "typeString": "struct procedureLibrary.fourRegisteredOrgans"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3178,
+                    "name": "fourRegisteredOrgans",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3081,
+                    "src": "2175:20:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                      "typeString": "struct procedureLibrary.fourRegisteredOrgans"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3181,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2210:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3180,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2210:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3183,
+                  "name": "_secondOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2246:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3182,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2246:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3185,
+                  "name": "_thirdOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2283:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3184,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2283:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3187,
+                  "name": "_fourthOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2319:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3186,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2319:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2174:181:7"
+            },
+            "returnParameters": {
+              "id": 3189,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2373:0:7"
+            },
+            "scope": 3241,
+            "src": "2141:460:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3239,
+              "nodeType": "Block",
+              "src": "2688:223:7",
+              "statements": [
+                {
+                  "assignments": [
+                    3221
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3221,
+                      "name": "authorizedUsersOrgan",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 3239,
+                      "src": "2743:26:7",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Organ_$551",
+                        "typeString": "contract Organ"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3220,
+                        "name": "Organ",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 551,
+                        "src": "2743:5:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Organ_$551",
+                          "typeString": "contract Organ"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3225,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3223,
+                        "name": "_organAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3217,
+                        "src": "2778:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 3222,
+                      "name": "Organ",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 551,
+                      "src": "2772:5:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_Organ_$551_$",
+                        "typeString": "type(contract Organ)"
+                      }
+                    },
+                    "id": 3224,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2772:20:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Organ_$551",
+                      "typeString": "contract Organ"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2743:49:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3233,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3229,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 9933,
+                                "src": "2857:3:7",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 3230,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2857:10:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3227,
+                              "name": "authorizedUsersOrgan",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3221,
+                              "src": "2811:20:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Organ_$551",
+                                "typeString": "contract Organ"
+                              }
+                            },
+                            "id": 3228,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "getAddressPositionInNorm",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 499,
+                            "src": "2811:45:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
+                              "typeString": "function (address) view external returns (uint256)"
+                            }
+                          },
+                          "id": 3231,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2811:57:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 3232,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2872:1:7",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "2811:62:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 3226,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        9936,
+                        9937
+                      ],
+                      "referencedDeclaration": 9936,
+                      "src": "2803:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 3234,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2803:71:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3235,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2803:71:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3237,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "2883:20:7",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 3236,
+                      "name": "_organAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3217,
+                      "src": "2890:13:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3238,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2883:20:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3240,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3218,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3217,
+                  "name": "_organAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3240,
+                  "src": "2628:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3216,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2628:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2627:31:7"
+            },
+            "returnParameters": {
+              "id": 3219,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2688:0:7"
+            },
+            "scope": 3241,
+            "src": "2609:302:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3242,
+        "src": "178:2738:7"
+      }
+    ],
+    "src": "0:2916:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/libraries/procedureLibrary.sol",
+    "exportedSymbols": {
+      "procedureLibrary": [
+        3241
+      ]
+    },
+    "id": 3242,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3049,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:7"
+      },
+      {
+        "absolutePath": "/C/Users/Ewan Debove/Documents/A5/Blockchain Programming/TD7/contracts/utils/Kelsen/solidity/contracts/Organ.sol",
+        "file": "../Organ.sol",
+        "id": 3050,
+        "nodeType": "ImportDirective",
+        "scope": 3242,
+        "sourceUnit": 552,
+        "src": "36:22:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "Kelsen Framework\nProcedure library\nThis library is used to hold the logic common to all procedures*",
+        "fullyImplemented": true,
+        "id": 3241,
+        "linearizedBaseContracts": [
+          3241
+        ],
+        "name": "procedureLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "procedureLibrary.ProcedureData",
+            "id": 3057,
+            "members": [
+              {
+                "constant": false,
+                "id": 3052,
+                "name": "procedureTypeNumber",
+                "nodeType": "VariableDeclaration",
+                "scope": 3057,
+                "src": "252:24:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3051,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "252:4:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3054,
+                "name": "procedureName",
+                "nodeType": "VariableDeclaration",
+                "scope": 3057,
+                "src": "287:21:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 3053,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "287:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3056,
+                "name": "linkedOrgans",
+                "nodeType": "VariableDeclaration",
+                "scope": 3057,
+                "src": "319:17:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3055,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "319:4:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ProcedureData",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "214:130:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.oneRegisteredOrgan",
+            "id": 3060,
+            "members": [
+              {
+                "constant": false,
+                "id": 3059,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3060,
+                "src": "394:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3058,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "394:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "oneRegisteredOrgan",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "352:83:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.twoRegisteredOrgans",
+            "id": 3065,
+            "members": [
+              {
+                "constant": false,
+                "id": 3062,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3065,
+                "src": "486:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3061,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "486:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3064,
+                "name": "secondOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3065,
+                "src": "530:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3063,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "530:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "twoRegisteredOrgans",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "443:129:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.threeRegisteredOrgans",
+            "id": 3072,
+            "members": [
+              {
+                "constant": false,
+                "id": 3067,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3072,
+                "src": "625:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3066,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "625:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3069,
+                "name": "secondOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3072,
+                "src": "669:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3068,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "669:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3071,
+                "name": "thirdOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3072,
+                "src": "714:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3070,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "714:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "threeRegisteredOrgans",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "580:175:7",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "procedureLibrary.fourRegisteredOrgans",
+            "id": 3081,
+            "members": [
+              {
+                "constant": false,
+                "id": 3074,
+                "name": "firstOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "807:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3073,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "807:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3076,
+                "name": "secondOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "851:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3075,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "851:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3078,
+                "name": "thirdOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "896:33:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3077,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "896:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3080,
+                "name": "fourthOrganAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 3081,
+                "src": "940:34:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address_payable",
+                  "typeString": "address payable"
+                },
+                "typeName": {
+                  "id": 3079,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "940:15:7",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "fourRegisteredOrgans",
+            "nodeType": "StructDefinition",
+            "scope": 3241,
+            "src": "763:219:7",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3110,
+              "nodeType": "Block",
+              "src": "1129:156:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3096,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3092,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3083,
+                        "src": "1140:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                          "typeString": "struct procedureLibrary.ProcedureData storage pointer"
+                        }
+                      },
+                      "id": 3094,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "procedureTypeNumber",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3052,
+                      "src": "1140:24:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3095,
+                      "name": "_procedureTypeNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3085,
+                      "src": "1167:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1140:47:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3097,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1140:47:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3098,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3083,
+                        "src": "1198:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                          "typeString": "struct procedureLibrary.ProcedureData storage pointer"
+                        }
+                      },
+                      "id": 3100,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "procedureName",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3054,
+                      "src": "1198:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3101,
+                      "name": "_procedureName",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3087,
+                      "src": "1219:14:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1198:35:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 3103,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1198:35:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3108,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3104,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3083,
+                        "src": "1244:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                          "typeString": "struct procedureLibrary.ProcedureData storage pointer"
+                        }
+                      },
+                      "id": 3106,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "linkedOrgans",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3056,
+                      "src": "1244:17:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3107,
+                      "name": "_linkedOrgans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3089,
+                      "src": "1264:13:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1244:33:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3109,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1244:33:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3111,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initProcedure",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3090,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3083,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1013:26:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                    "typeString": "struct procedureLibrary.ProcedureData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3082,
+                    "name": "ProcedureData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3057,
+                    "src": "1013:13:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ProcedureData_$3057_storage_ptr",
+                      "typeString": "struct procedureLibrary.ProcedureData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3085,
+                  "name": "_procedureTypeNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1041:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3084,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1041:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3087,
+                  "name": "_procedureName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1068:22:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3086,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1068:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3089,
+                  "name": "_linkedOrgans",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3111,
+                  "src": "1092:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3088,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1092:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1012:99:7"
+            },
+            "returnParameters": {
+              "id": 3091,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1129:0:7"
+            },
+            "scope": 3241,
+            "src": "990:295:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3124,
+              "nodeType": "Block",
+              "src": "1411:62:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3122,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3118,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3113,
+                        "src": "1422:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_oneRegisteredOrgan_$3060_storage_ptr",
+                          "typeString": "struct procedureLibrary.oneRegisteredOrgan storage pointer"
+                        }
+                      },
+                      "id": 3120,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3059,
+                      "src": "1422:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3121,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3115,
+                      "src": "1447:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1422:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3123,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1422:43:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3125,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initOneRegisteredOrgan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3116,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3113,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3125,
+                  "src": "1325:31:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_oneRegisteredOrgan_$3060_storage_ptr",
+                    "typeString": "struct procedureLibrary.oneRegisteredOrgan"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3112,
+                    "name": "oneRegisteredOrgan",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3060,
+                    "src": "1325:18:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_oneRegisteredOrgan_$3060_storage_ptr",
+                      "typeString": "struct procedureLibrary.oneRegisteredOrgan"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3115,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3125,
+                  "src": "1358:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3114,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1358:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1324:69:7"
+            },
+            "returnParameters": {
+              "id": 3117,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1411:0:7"
+            },
+            "scope": 3241,
+            "src": "1293:180:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3146,
+              "nodeType": "Block",
+              "src": "1638:118:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3138,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3134,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3127,
+                        "src": "1649:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                          "typeString": "struct procedureLibrary.twoRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3136,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3062,
+                      "src": "1649:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3137,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3129,
+                      "src": "1674:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1649:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3139,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1649:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3140,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3127,
+                        "src": "1703:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                          "typeString": "struct procedureLibrary.twoRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3142,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3064,
+                      "src": "1703:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3143,
+                      "name": "_secondOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3131,
+                      "src": "1729:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1703:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1703:45:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3147,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initTwoRegisteredOrgans",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3132,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3127,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1514:32:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                    "typeString": "struct procedureLibrary.twoRegisteredOrgans"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3126,
+                    "name": "twoRegisteredOrgans",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3065,
+                    "src": "1514:19:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_twoRegisteredOrgans_$3065_storage_ptr",
+                      "typeString": "struct procedureLibrary.twoRegisteredOrgans"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3129,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1548:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3128,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1548:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3131,
+                  "name": "_secondOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1584:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3130,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1584:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1513:107:7"
+            },
+            "returnParameters": {
+              "id": 3133,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1638:0:7"
+            },
+            "scope": 3241,
+            "src": "1481:275:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3176,
+              "nodeType": "Block",
+              "src": "1961:172:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3158,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "1972:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3160,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3067,
+                      "src": "1972:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3161,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3151,
+                      "src": "1997:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1972:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3163,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1972:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3164,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "2026:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3166,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3069,
+                      "src": "2026:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3167,
+                      "name": "_secondOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3153,
+                      "src": "2052:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2026:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3169,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2026:45:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3170,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "2082:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                          "typeString": "struct procedureLibrary.threeRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3172,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "thirdOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3071,
+                      "src": "2082:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3173,
+                      "name": "_thirdOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3155,
+                      "src": "2107:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2082:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3175,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2082:43:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3177,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initThreeRegisteredOrgans",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3156,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3149,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1799:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                    "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3148,
+                    "name": "threeRegisteredOrgans",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3072,
+                    "src": "1799:21:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_threeRegisteredOrgans_$3072_storage_ptr",
+                      "typeString": "struct procedureLibrary.threeRegisteredOrgans"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3151,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1835:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3150,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1835:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3153,
+                  "name": "_secondOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1871:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1871:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3155,
+                  "name": "_thirdOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3177,
+                  "src": "1908:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3154,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1908:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1798:145:7"
+            },
+            "returnParameters": {
+              "id": 3157,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1961:0:7"
+            },
+            "scope": 3241,
+            "src": "1764:369:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3214,
+              "nodeType": "Block",
+              "src": "2373:228:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3194,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3190,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2384:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3192,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "firstOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3074,
+                      "src": "2384:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3193,
+                      "name": "_firstOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3181,
+                      "src": "2409:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2384:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3195,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2384:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3200,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3196,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2438:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3198,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3076,
+                      "src": "2438:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3199,
+                      "name": "_secondOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3183,
+                      "src": "2464:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2438:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3201,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2438:45:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3206,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3202,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2494:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3204,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "thirdOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3078,
+                      "src": "2494:22:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3205,
+                      "name": "_thirdOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3185,
+                      "src": "2519:18:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2494:43:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3207,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2494:43:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3208,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3179,
+                        "src": "2548:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                          "typeString": "struct procedureLibrary.fourRegisteredOrgans storage pointer"
+                        }
+                      },
+                      "id": 3210,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "fourthOrganAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3080,
+                      "src": "2548:23:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3211,
+                      "name": "_fourthOrganAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3187,
+                      "src": "2574:19:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "2548:45:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 3213,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2548:45:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3215,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initFourRegisteredOrgans",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3188,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3179,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2175:33:7",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                    "typeString": "struct procedureLibrary.fourRegisteredOrgans"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3178,
+                    "name": "fourRegisteredOrgans",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3081,
+                    "src": "2175:20:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_fourRegisteredOrgans_$3081_storage_ptr",
+                      "typeString": "struct procedureLibrary.fourRegisteredOrgans"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3181,
+                  "name": "_firstOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2210:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3180,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2210:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3183,
+                  "name": "_secondOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2246:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3182,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2246:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3185,
+                  "name": "_thirdOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2283:34:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3184,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2283:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3187,
+                  "name": "_fourthOrganAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3215,
+                  "src": "2319:35:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3186,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2319:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2174:181:7"
+            },
+            "returnParameters": {
+              "id": 3189,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2373:0:7"
+            },
+            "scope": 3241,
+            "src": "2141:460:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3239,
+              "nodeType": "Block",
+              "src": "2688:223:7",
+              "statements": [
+                {
+                  "assignments": [
+                    3221
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3221,
+                      "name": "authorizedUsersOrgan",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 3239,
+                      "src": "2743:26:7",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Organ_$551",
+                        "typeString": "contract Organ"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3220,
+                        "name": "Organ",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 551,
+                        "src": "2743:5:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Organ_$551",
+                          "typeString": "contract Organ"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3225,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3223,
+                        "name": "_organAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3217,
+                        "src": "2778:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 3222,
+                      "name": "Organ",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 551,
+                      "src": "2772:5:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_Organ_$551_$",
+                        "typeString": "type(contract Organ)"
+                      }
+                    },
+                    "id": 3224,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2772:20:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Organ_$551",
+                      "typeString": "contract Organ"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2743:49:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3233,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 3229,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 9933,
+                                "src": "2857:3:7",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 3230,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "2857:10:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3227,
+                              "name": "authorizedUsersOrgan",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3221,
+                              "src": "2811:20:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Organ_$551",
+                                "typeString": "contract Organ"
+                              }
+                            },
+                            "id": 3228,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "getAddressPositionInNorm",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 499,
+                            "src": "2811:45:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
+                              "typeString": "function (address) view external returns (uint256)"
+                            }
+                          },
+                          "id": 3231,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2811:57:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 3232,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2872:1:7",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "2811:62:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 3226,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        9936,
+                        9937
+                      ],
+                      "referencedDeclaration": 9936,
+                      "src": "2803:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 3234,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2803:71:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3235,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2803:71:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3237,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "2883:20:7",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 3236,
+                      "name": "_organAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3217,
+                      "src": "2890:13:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3238,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2883:20:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3240,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3218,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3217,
+                  "name": "_organAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3240,
+                  "src": "2628:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3216,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2628:15:7",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2627:31:7"
+            },
+            "returnParameters": {
+              "id": 3219,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2688:0:7"
+            },
+            "scope": 3241,
+            "src": "2609:302:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3242,
+        "src": "178:2738:7"
+      }
+    ],
+    "src": "0:2916:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-12-04T11:02:18.993Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Kelsen Framework Procedure library This library is used to hold the logic common to all procedures*"
+  }
+}
