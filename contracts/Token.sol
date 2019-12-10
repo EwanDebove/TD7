@@ -8,6 +8,8 @@ contract MyNFT is ERC721Full, ERC721Mintable {
   string public name;
   uint256  lastId;
 
+  event count(uint256 _count);
+
   constructor() ERC721Full("MyNFT", "MNFT") public {
   	lastId = 0;
   }
@@ -16,9 +18,12 @@ contract MyNFT is ERC721Full, ERC721Mintable {
   }
 
   function mint() public payable {
-  	require(msg.value == 100 );
+  	require(msg.value == 100000000000000000 );
   	_safeMint(msg.sender, lastId);
   	lastId = lastId +1;
   }
 
+  function getCount() public {
+  	emit count(lastId);
+  }
 }
